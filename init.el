@@ -13,10 +13,8 @@
 (setq whitespace-style '(face empty tabs lines-tail trailing))
 (global-whitespace-mode t)
 
-;;(require 'fill-column-indicator)
-;;(set-face-attribute 'fill-column-attribute nil :foreground "grey90")
-;;(setq display-fill-column-indicator t)
-;;(setq display-fill-column-indicator-character "#")
+;; custom key bindings
+(global-set-key [f5] 'revert-buffer)
 
 ;; Rust stuff
 (custom-set-variables
@@ -41,6 +39,3 @@
 
 (add-hook 'rust-mode-hook
           (lambda () (setq indent-tabs-mode nil)))
-
-;; custom key bindings
-(global-set-key [f5] 'revert-buffer)
