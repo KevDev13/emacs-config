@@ -13,10 +13,11 @@
 (setq whitespace-style '(face empty tabs lines-tail trailing))
 (global-whitespace-mode t)
 
+(global-auto-revert-mode 1)
+
 ;; custom key bindings
 (global-set-key [f5] 'revert-buffer)
 
-;; Rust stuff
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -31,11 +32,11 @@
  ;; If there is more than one, they won't work right.
  )
 
+(add-hook 'rust-mode-hook
+          (lambda () (setq indent-tabs-mode nil)))
+
 ;;(require 'package)
 ;;(add-to-list 'package-archives
 ;;             '("melpa" . "https://melpa.org/packages/") t)
 ;;(package-initialize)
 ;;(package-refresh-contents)
-
-(add-hook 'rust-mode-hook
-          (lambda () (setq indent-tabs-mode nil)))
