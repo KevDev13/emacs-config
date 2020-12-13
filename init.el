@@ -10,12 +10,13 @@
 
 ;; going over 80 columns == not good
 (require 'whitespace)
-(setq whitespace-style '(face empty tabs lines-tail trailing))
+(setq whitespace-line-column 80) ;; line limit
+;;(setq whitespace-style '(face empty tabs lines-tail trailing))
+(setq whitespace-style '(face lines-tail))
 (global-whitespace-mode t)
 
-(global-auto-revert-mode 1)
-
-;; custom key bindings
+;; auto-revert buffers on file update (such as with git)
+;;(global-auto-revert-mode 1)
 (global-set-key [f5] 'revert-buffer)
 
 (custom-set-variables
