@@ -4,14 +4,12 @@
 ;; line numbers and such
 (when (version<= "26.0.50" emacs-version)
   (global-display-line-numbers-mode))
-;;(setq display-fill-column-indicator-column 80)
 (setq line-number-mode t)
 (setq column-number-mode t)
 
 ;; going over 80 columns == not good
 (require 'whitespace)
-(setq whitespace-line-column 80) ;; line limit
-;;(setq whitespace-style '(face empty tabs lines-tail trailing))
+(setq whitespace-line-column 80) ;; set line limit
 (setq whitespace-style '(face lines-tail))
 (global-whitespace-mode t)
 
@@ -19,6 +17,12 @@
 ;;(global-auto-revert-mode 1)
 (global-set-key [f5] 'revert-buffer)
 
+;; Rust stuff
+(require 'rust-mode)
+(add-hook 'rust-mode-hook ;; when in Rust, no using tabs, sadly...
+          (lambda () (setq indent-tabs-mode nil)))
+
+;; custom variables set by other items... probably shouldn't touch this
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -33,11 +37,9 @@
  ;; If there is more than one, they won't work right.
  )
 
-(add-hook 'rust-mode-hook
-          (lambda () (setq indent-tabs-mode nil)))
-
-;;(require 'package)
-;;(add-to-list 'package-archives
-;;             '("melpa" . "https://melpa.org/packages/") t)
-;;(package-initialize)
-;;(package-refresh-contents)
+;; melpa
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+(package-refresh-contents)
