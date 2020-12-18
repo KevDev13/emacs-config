@@ -37,6 +37,9 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; set EOL characters to *nix so we have LF even when working on Windows
+(setq default-buffer-file-coding-system 'utf-8-unix)
+
 ;; melpa
 (require 'package)
 (add-to-list 'package-archives
