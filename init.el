@@ -7,11 +7,15 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-;; going over 80 columns == not good
+;; highlight any characters over 80 character limit per line
 (require 'whitespace)
 (setq whitespace-line-column 80) ;; set line limit
 (setq whitespace-style '(face lines-tail))
 (global-whitespace-mode t)
+
+;; org-mode uses auto-fill-mode
+(setq-default fill-column 80) ;; 80 not 70 chars per line
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 ;; set EOL characters to *nix so we have LF even when working on Windows
 (setq default-buffer-file-coding-system 'utf-8-unix)
