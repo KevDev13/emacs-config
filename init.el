@@ -13,6 +13,9 @@
 (setq whitespace-style '(face lines-tail))
 (global-whitespace-mode t)
 
+;; set EOL characters to *nix so we have LF even when working on Windows
+(setq default-buffer-file-coding-system 'utf-8-unix)
+
 ;; auto-revert buffers on file update (such as with git)
 ;;(global-auto-revert-mode 1)
 (global-set-key [f5] 'revert-buffer)
@@ -36,9 +39,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-;; set EOL characters to *nix so we have LF even when working on Windows
-(setq default-buffer-file-coding-system 'utf-8-unix)
 
 ;; melpa
 (require 'package)
