@@ -13,6 +13,9 @@
 (setq whitespace-style '(face lines-tail))
 (global-whitespace-mode t)
 
+;; set default tab size
+(setq-default tab-width 4)
+
 ;; org-mode uses auto-fill-mode
 (setq-default fill-column 80) ;; 80 not 70 chars per line
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
