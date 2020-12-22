@@ -3,9 +3,9 @@
 
 ;; line numbers and such
 (when (version<= "26.0.50" emacs-version)
-  (global-display-line-numbers-mode))
-(setq line-number-mode t)
-(setq column-number-mode t)
+  (global-display-line-numbers-mode)) ;; show line numbers on left hand side
+(setq line-number-mode t) ;; show line numbers
+(setq column-number-mode t) ;; show column numbers
 
 ;; highlight any characters over 80 character limit per line
 (require 'whitespace)
@@ -25,7 +25,7 @@
 (global-set-key [f5] 'revert-buffer) ;; use this to press key to revert
 
 ;; Rust stuff
-(require 'rust-mode)
+(require 'rust-mode) ;; require rust-mode
 (add-hook 'rust-mode-hook ;; when in Rust, no using tabs, sadly...
           (lambda () (setq indent-tabs-mode nil)))
 
