@@ -6,7 +6,7 @@
 	(progn
 	  (setq initial-frame-alist
 			'(
-			  (width . 150) ; width in characters
+			  (width . 100) ; width in characters
 			  (height . 40) ; height in lines
 			  ))))
 
