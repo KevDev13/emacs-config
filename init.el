@@ -10,6 +10,21 @@
 			  (height . 40) ; height in lines
 			  ))))
 
+; melpa
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+(package-refresh-contents)
+
+; install packages if they're not installed
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 ; line numbers and such
 (when (version<= "26.0.50" emacs-version)
   (global-display-line-numbers-mode)) ; show line numbers on left hand side
@@ -50,8 +65,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (misterioso)))
- '(package-selected-packages (quote (rust-mode))))
+ '(custom-enabled-themes '(misterioso))
+ '(package-selected-packages '(use-package rust-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -59,9 +74,3 @@
  ;; If there is more than one, they won't work right.
  )
 
-; melpa
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-(package-refresh-contents)
