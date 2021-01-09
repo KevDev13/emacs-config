@@ -1,12 +1,14 @@
 ; no splash screen on startup
 (setq inhibit-splash-screen t)
 
+(defvar max-line-width 100)
+
 ; set default window size
 (if (display-graphic-p)
 	(progn
 	  (setq initial-frame-alist
 			'(
-			  (width . 100) ; width in characters
+			  (width . 120) ; width in characters
 			  (height . 40) ; height in lines
 			  ))))
 
@@ -31,9 +33,9 @@
 (setq line-number-mode t) ; show line numbers
 (setq column-number-mode t) ; show column numbers
 
-; highlight any characters over 80 character limit per line
+; highlight any characters over character limit per line
 (require 'whitespace)
-(setq whitespace-line-column 80) ;; set line limit
+(setq whitespace-line-column max-line-width) ;; set line limit
 (setq whitespace-style '(face lines-tail))
 (global-whitespace-mode t)
 
@@ -44,7 +46,7 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ; org-mode uses auto-fill-mode
-(setq-default fill-column 80) ; 80 not 70 chars per line
+(setq-default fill-column max-line-width) ; not 70 chars per line
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 ; set EOL characters to *nix so we have LF even when working on Windows
