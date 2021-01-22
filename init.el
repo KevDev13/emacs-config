@@ -4,7 +4,7 @@
 ; define max line width for highlighting and auto-fill
 (defvar max-line-width 100)
 
-; uncomment this if you ever have to use spaces over tabs like a plebian
+; uncomment this if you ever have to use spaces over tabs
 ;(setq indent-tabs-mode nil)
 
 ; set default window size
