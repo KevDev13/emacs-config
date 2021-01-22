@@ -1,7 +1,11 @@
 ; no splash screen on startup
 (setq inhibit-splash-screen t)
 
+; define max line width for highlighting and auto-fill
 (defvar max-line-width 100)
+
+; uncomment this if you ever have to use spaces over tabs like a plebian
+;(setq indent-tabs-mode nil)
 
 ; set default window size
 (if (display-graphic-p)
@@ -42,8 +46,12 @@
 ; set default tab size
 (setq-default tab-width 4)
 
+;; button mapping
 ; esc = get out of anything
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+; auto-revert buffers on file update (such as with git)
+(global-set-key [f5] 'revert-buffer) ; use this to press key to revert
+;(global-auto-revert-mode 1) ; use this to auto-revert
 
 ; org-mode uses auto-fill-mode
 (setq-default fill-column max-line-width) ; not 70 chars per line
@@ -51,10 +59,6 @@
 
 ; set EOL characters to *nix so we have LF even when working on Windows
 (setq default-buffer-file-coding-system 'utf-8-unix)
-
-; auto-revert buffers on file update (such as with git)
-;(global-auto-revert-mode 1) ; use this to auto-revert
-(global-set-key [f5] 'revert-buffer) ; use this to press key to revert
 
 ; Rust stuff
 (require 'rust-mode) ; require rust-mode
