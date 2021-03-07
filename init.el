@@ -45,6 +45,7 @@
 
 ; set default tab size
 (setq-default tab-width 4)
+(setq-default c-basic-offset 4)
 
 ;; button mapping
 ; esc = get out of anything
