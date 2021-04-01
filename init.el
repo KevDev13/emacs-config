@@ -1,7 +1,7 @@
 ; no splash screen on startup
 (setq inhibit-splash-screen t)
 
-; define max line width for highlighting and auto-fill
+; define variables
 (defvar max-line-width 100)
 (defvar tab-indent-default 4)
 (defvar tab-indent-c tab-indent-default)
