@@ -3,6 +3,8 @@
 
 ; define max line width for highlighting and auto-fill
 (defvar max-line-width 100)
+(defvar tab-indent-default 4)
+(defvar tab-indent-c tab-indent-default)
 
 ; uncomment this if you ever have to use spaces over tabs
 ;(setq indent-tabs-mode nil)
@@ -44,8 +46,8 @@
 (global-whitespace-mode t)
 
 ; set default tab size
-(setq-default tab-width 4)
-(setq-default c-basic-offset 4)
+(setq-default tab-width tab-indent-default)
+(setq-default c-basic-offset tab-indent-c)
 
 ;; button mapping
 ; esc = get out of anything
