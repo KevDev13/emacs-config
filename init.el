@@ -63,6 +63,9 @@
 ; set EOL characters to *nix so we have LF even when working on Windows
 (setq default-buffer-file-coding-system 'utf-8-unix)
 
+; always enable company mode
+(add-hook 'after-init-hook 'global-company-mode)
+
 ; Rust stuff
 (require 'rust-mode) ; require rust-mode
 (add-hook 'rust-mode-hook ; when in Rust, no using tabs, sadly...
