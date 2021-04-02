@@ -52,9 +52,9 @@
 ;; button mapping
 ; esc = get out of anything
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-; auto-revert buffers on file update (such as with git)
-(global-set-key [f5] 'revert-buffer) ; use this to press key to revert
-;(global-auto-revert-mode 1) ; use this to auto-revert
+(global-set-key [f5] 'revert-buffer) ; use this to press key to revert on external changes (i.e. git)
+;(global-auto-revert-mode 1) ; use this to auto-revert on external changes (i.e. git)
+(global-set-key [(control c) (a)] 'company-complete) ; initiate manual completion via company
 
 ; org-mode uses auto-fill-mode
 (setq-default fill-column max-line-width) ; not 70 chars per line
@@ -75,7 +75,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(misterioso))
- '(package-selected-packages '(magit go-mode use-package rust-mode)))
+ '(package-selected-packages
+   '(company-c-headers company magit go-mode use-package rust-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
