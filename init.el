@@ -2,7 +2,7 @@
 (setq inhibit-splash-screen t)
 
 ; define variables
-(defvar max-line-width 100)
+(defvar max-line-width 120)
 (defvar tab-indent-default 4)
 (defvar tab-indent-c tab-indent-default)
 
